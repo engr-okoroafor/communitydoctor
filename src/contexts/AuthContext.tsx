@@ -29,8 +29,12 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   useEffect(() => {
     // Check for existing token on app load
     const token = localStorage.getItem('token');
-    if (token) {
+    const checkToken = async (token: string) => {
       validateToken(token);
+    };
+    
+    if (token) {
+      checkToken(token);
     } else {
       setAuthState({
         user: null,
@@ -43,7 +47,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const validateToken = async (token: string) => {
     try {
       const userData = await ApiService.validateToken(token);
-      if (userData) {
+      if (userData && userData.user) {
         setUser(userData);
         setProfile(userData);
         setAuthState({
@@ -82,11 +86,11 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         localStorage.setItem('token', response.session.access_token);
         setUser(response.user);
         setProfile(response.user);
-        setAuthState({
+        setAuthState(prev => ({
           user: response.user,
           isLoading: false,
           isAuthenticated: true,
-        });
+        }));
         checkSubscription();
       } else {
         throw new Error('Invalid response from server');
