@@ -1,0 +1,6 @@
+https://cdn.jsdelivr.net/gh/engr-okoroafor/healthconsult@5212cd23f9d4193367ab569acb24e07aae91650d/.gitignore
+.env
+.env.example
+node_modules/
+dist/
+.env
