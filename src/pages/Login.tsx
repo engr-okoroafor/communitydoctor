@@ -18,6 +18,13 @@ export default function Login() {
   const { login, signup } = useAuth();
   const navigate = useNavigate();
 
+  // Redirect if already logged in
+  React.useEffect(() => {
+    if (localStorage.getItem('token')) {
+      navigate('/');
+    }
+  }, [navigate]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -28,7 +35,7 @@ export default function Login() {
       if (isLogin) {
         await login(formData.email, formData.password);
         // If we reach here, login was successful
-        navigate('/dashboard');
+        navigate('/');
       } else {
         await signup(formData.email, formData.password, formData.name);
         // If we reach here, signup was successful
