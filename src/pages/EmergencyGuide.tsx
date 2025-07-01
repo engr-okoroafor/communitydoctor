@@ -481,27 +481,27 @@ const EmergencyGuide: React.FC = () => {
         'Do not elevate the bitten limb above heart level'
       ]
     },
-    'eye-injury': {
-      title: 'Eye Injury Emergency',
+    'poisoning': {
+      title: 'Poisoning Emergency',
       immediateActions: [
-        'Do not rub or touch the injured eye',
-        'Cover both eyes with sterile gauze',
-        'Seek immediate medical attention',
-        'If chemical in eye, flush with clean water for 15 minutes',
-        'Keep person calm and still'
+        'Call Poison Control: 1-800-222-1222',
+        'Call 911 if person is unconscious',
+        'Identify the poison if possible',
+        'Follow Poison Control instructions',
+        'Keep person calm and monitor breathing'
       ],
       warningSigns: [
-        'Visible cut or puncture to eye',
-        'Object embedded in eye',
-        'Blood in the eye',
-        'Sudden vision loss',
-        'Severe eye pain'
+        'Nausea and vomiting',
+        'Difficulty breathing',
+        'Confusion or altered mental state',
+        'Seizures or convulsions',
+        'Burns around mouth or throat'
       ],
       doNots: [
-        'Do not remove embedded objects',
-        'Do not apply pressure to the eye',
-        'Do not use eye drops unless prescribed',
-        'Do not allow rubbing of the eye'
+        'Do not induce vomiting unless told to',
+        'Do not give activated charcoal',
+        'Do not give milk or water unless instructed',
+        'Do not leave person alone'
       ]
     }
   };
