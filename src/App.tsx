@@ -11,6 +11,8 @@ import EmergencyGuide from './pages/EmergencyGuide';
 import Pricing from './pages/Pricing';
 import Settings from './pages/Settings';
 import Login from './pages/Login';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
 import { AuthProvider } from './contexts/AuthContext';
 import { Toaster } from 'react-hot-toast';
 
@@ -33,6 +35,8 @@ function App() {
                 <Route path="emergency" element={<EmergencyGuide />} />
                 <Route path="pricing" element={<Pricing />} />
                 <Route path="settings" element={<Settings />} />
+                <Route path="privacy" element={<Privacy />} />
+                <Route path="terms" element={<Terms />} />
               </Route>
             </Routes>
           </div>
